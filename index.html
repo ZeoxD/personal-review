@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Dashboard</title>
+</head>
+<body>
+    <div id="body">
+        <div id="dashboard">
+            <div class="dashboard-content-top">
+                <i class="fas fa-id-card"></i> 
+                <span class="hidden-text">Review Dashboard</span>
+                <span class="hidden-card">Review Dashboard</span>
+            </div>
+            <div class="dashboard-content-mid">
+                <ul class="list-parent">
+                    <a class="list list-active" href="index.html"> <i class="fas fa-home"></i> <span class="hidden-text"> Home </span> </a>
+                    <span class="hidden-card"> Home </span>
+                    <a class="list" href="#"> <i class="fas fa-user"></i> <span class="hidden-text"> Profile </span> </a>
+                    <span class="hidden-card">Profile</span>
+                    <a class="list" href="#"> <i class="fas fa-compass"></i> <span class="hidden-text"> Explore </span> </a>
+                    <span class="hidden-card"> Explore </span>
+                    <a class="list" href="#"> <i class="fas fa-cubes"></i> <span class="hidden-text"> Random </span> </a>
+                    <span class="hidden-card"> Random </span>
+                    
+                    <button class="btn-list"> <i class="fas fa-sign-out hidden-icon"></i> <span class="hidden-text">SIGN IN</span> </button>
+                    <span class="hidden-card">SIGN IN</span>	
+                </ul>
+            </div>
+
+        </div>
+        <div id="window">
+        	<div class="card" id="card">
+        		<div class="card-header" id="card-header"></div>
+        		<div class="card-content" id="card-content"></div>
+        	</div>
+        	<div class="card" id="card">
+        		<div class="card-header" id="card-header"></div>
+        		<div class="card-content" id="card-content"></div>
+        	</div>
+        	<div class="card" id="card">
+        		<div class="card-header" id="card-header"></div>
+        		<div class="card-content" id="card-content"></div>
+        	</div>
+        	<div class="card" id="card">
+        		<div class="card-header" id="card-header"></div>
+        		<div class="card-content" id="card-content"></div>
+        	</div>
+        	<div class="card" id="card">
+        		<div class="card-header" id="card-header"></div>
+        		<div class="card-content" id="card-content"></div>
+        	</div>
+        	<div class="card" id="card">
+        		<div class="card-header" id="card-header"></div>
+        		<div class="card-content" id="card-content"></div>
+        	</div>
+        	
+        	<div class="card" id="card">
+        		<div class="card-header" id="card-header"></div>
+        		<div class="card-content" id="card-content"></div>
+        	</div>
+        	
+        	<div class="card" id="card">
+        		<div class="card-header" id="card-header"></div>
+        		<div class="card-content" id="card-content"></div>
+        	</div>
+        	
+        	
+        </div>
+    </div>
+    <script>
+        const imgR = document.getElementById("img-right");
+        const cancelBtnR = document.getElementById("cancel-btn-right");
+        const fileNameR = document.getElementById("file-name-right");
+        const fileBtnR = document.getElementById("file-btn-right");
+        const chooseBtnR = document.getElementsByClassName("choose-btn-right");
+        const cloudIcon = document.getElementById("icon");
+        const noFileText = document.getElementById("no-file");
+        fileBtnR.addEventListener("change", function(){
+
+            cloudIcon.classList.add("hidden-icon");
+            noFileText.classList.add("hidden-element");
+            cancelBtnR.classList.add("hidden-element");
+
+            const file = this.files[0];
+            if(file){
+                const reader = new FileReader();
+                reader.onload = function(){
+                    const result =  reader.result;
+                    imgR.src = this.value;
+                }
+                reader.readAsDataURL(file);
+            }
+            imgR.classList.add("window-img");
+            let fileNameRValue = this.value.substring(12);
+            fileNameR.innerHTML = fileNameRValue;
+        });
+        
+        function fileBtnClickR() {
+            fileBtnR.click();
+        }
+    </script>
+</body>
+</html>

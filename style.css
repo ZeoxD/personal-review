@@ -1,0 +1,241 @@
+*{
+    transition: 500ms;
+    margin: 0;
+    padding: 0;
+}
+
+#body{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(222, 222, 255);
+}
+
+#dashboard{
+    border: 1px solid #333;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-left: 2vw;
+    height: 90vh; 
+    width: 20vw;
+
+}
+
+
+.dashboard-content-top{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: #eeeeee;
+    font-weight: bold;
+    font-size: 1.15rem;
+    border-bottom: 2px solid #555;
+    height: 60px;
+    padding: 3px 5px;
+}
+
+.dashboard-content-mid{
+    padding-top: 10px;
+    height: 70%;
+    display:flex;
+    justify-content: center;
+	overflow-y: scroll;
+}
+
+.dashboard-content-mid::-webkit-scrollbar{
+	width: 0px;
+}
+
+.list-parent{
+    width: 80%;
+}
+
+.list{
+    display:flex;
+    align-items: center;
+    height: 50px;
+    list-style-type: none;
+    color: #eeeeee;
+    border: 1px solid rgba(0, 0, 0, 0.068);
+    margin: 10px 0;
+    border-radius: 10px;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+.list:hover{
+    transition: 1s;
+    background-color: #e63572;
+    cursor: pointer;
+}
+
+.list-active{
+    background-color: #e63572;
+}
+
+
+.btn-list{
+    display:flex;
+    font-weight: bold;
+    color: #eeeeee;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    list-style-type: none;
+    background-color: #e63572;
+    border: 1px solid rgba(0, 0, 0, 0.068);
+    border-radius: 10px;
+    width: 100%;
+}
+
+.btn-list:hover{
+    transition: 1s;
+    background-color: #e63572;
+    cursor: pointer;
+}
+
+
+.hidden-icon{
+    display: none;
+}
+
+.hidden-element{
+    display: none;
+}
+
+.fas{
+    color:#eeeeee;
+    font-size: 1.3rem;
+    padding-right: 15px;
+}
+
+.hidden-card{
+    position: absolute;
+    left: 20vw;
+    border: 1px solid black;
+    background: #222;
+    display: none; 
+    padding: 10px 8px;
+    color: #eeeeee;
+    border-radius: 10px;
+    font-size: 1rem;
+    box-shadow: 1px 1px 2px black;
+}
+
+.list-parent > .hidden-card{
+    transform: translateY(-55px);
+}   
+
+#window{
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.001);
+    margin: 5vh 3vw;
+    height: 90vh; 
+    width: 72vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+.card{
+	height: 19.5rem;
+	width: 15rem;
+	margin: 1rem;
+	border: 0px;
+	box-shadow: 1px 1px 3px black;
+	border-radius: 1rem;
+	background-color: rgba(255, 255, 255, 0.3);
+	
+}
+
+.card-header{
+	height: 15%;
+	width: 99.5%;
+	border: 1px solid #121212;
+	border-radius: 1rem 1rem 0 0;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.card-content{
+	border: 1px solid #222;
+	height: 84%;
+	width: 99.5%;
+	border-radius: 0 0 1rem 1rem;
+}
+  
+#window::-webkit-scrollbar {
+    width: 0px;
+}
+
+
+@media screen and (max-width:980px){
+    .dashboard-content-top{
+        font-size: 0.8rem;
+    }
+    
+    .btn-list{
+        font-size: 0.7rem;
+    }
+
+    .dashboard-content-top{
+        font-size: 0.8rem;
+    }
+
+}
+
+
+@media screen and (max-width:768px){
+    
+    #dashboard{
+        width: 5rem;
+    }
+
+    .hidden-text{
+        display: none;
+    }
+    
+    .hidden-icon{
+        display: block;
+    }
+
+    .dashboard-content-top{
+        padding-left: 20px;
+    }
+
+    .list{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 4px;
+    }
+
+    .btn-list{
+        padding-left: 12px;
+    }
+
+    .upload-button{
+        font-size: 1rem;
+    }
+
+    .dashboard-content-top:hover > .hidden-card{
+        display: block;
+    }
+
+    .list:hover + .hidden-card{
+        display: block;
+    }
+
+    .btn-list:hover + .hidden-card{
+        display: block;
+    }
+}
+    
+@media screen and (max-width:480px){  
+      
+    .hidden-card{
+    	left: 105px;
+}
